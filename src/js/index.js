@@ -46,8 +46,9 @@ const controlSearch = async () => {
 elements.searchForm.addEventListener('submit', e => {
     e.preventDefault();
     controlSearch();
-
 });
+
+
 
 elements.searchResPages.addEventListener('click', e => {
     const btn = e.target.closest('.btn-inline');
@@ -73,8 +74,10 @@ const controlRecipe = async () => {
         state.recipe = new Recipe(id);
         
         try {
-            //* get recipe data
+            //* get recipe data and parse ingredients
             await state.recipe.getRecipe();
+            console.log(state.recipe.ingredients);
+            state.recipe.parseIngredients();
 
             //* calculate servings and time
             state.recipe.calcTime();
@@ -83,13 +86,13 @@ const controlRecipe = async () => {
             //* Render recipe
             console.log(state.recipe)
         } catch (err) {
-            alert('Error processing recipe!');
+            console.log('Error processing recipe!');
         }
         
     }
 };
 
-    //* addEventListener with multiple arguements
+//* addEventListener with multiple arguements
 // window.addEventListener('hashchange', controlRecipe);
 // window.addEventListener('load', controlRecipe);
 
