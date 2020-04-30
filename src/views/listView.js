@@ -16,11 +16,11 @@ export const renderItem = item => {
         </li>
     `;
 
-    element.shopping.insertAdjacentHTML('beforeend', markup);
+    elements.shopping.insertAdjacentHTML('beforeend', markup);
 };
 
-export const deleteItem = item => {
-    const item = document.querySelector('[data-itemid="${id}"]');
-    item.parentElement.removeChild(item);
+export const deleteItem = id => {
+    const item = document.querySelector(`[data-itemid="${id}"]`);
+    if(item) item.parentElement.removeChild(item);
 };
 
