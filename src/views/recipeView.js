@@ -1,5 +1,6 @@
 import { elements } from './base';
 import fracty from 'fracty';
+// import {Fraction} from 'fractional'
 
 export const clearRecipe = () => {
     elements.recipe.innerHTML = '';
@@ -9,15 +10,16 @@ const formatCount = count => {
     if(count) {
         // count = 2.5 --->   5/2  --->  2 1/2
         // count = 0.5 --->  1/2
-        const [int, dec] = count.toString().split('.').map(el => parseInt(el, 10));
+        const newCount = Math.round(count * 10000) / 10000;
+        const [int, dec] = newCount.toString().split('.').map(el => parseInt(el, 10));
 
-        if(!dec) return count;
+        if(!dec) return newCount;
 
         if(int === 0) {
-            const fr = new fracty(count);
+            const fr = new fracty(newCount);
             return `${fr.numerator}/${fr.denominator}`;
         } else {
-            const fr = new fracty(count - int);
+            const fr = new fracty(newCount - int);
             return `${int} ${fr.numerator}/${fr.denominator}`;
         }
     }
