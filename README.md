@@ -1,5 +1,5 @@
 # forkify
-<img src="https://i.ibb.co/4tNHSWz/1.png" alt="1" border="0">
+<img src="https://i.ibb.co/6N1ZfXy/2.png" alt="1" border="0">
 <br/>
 
 1. Installation:
