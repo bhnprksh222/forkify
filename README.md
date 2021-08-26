@@ -1,12 +1,12 @@
 # forkify
 <img src="https://i.ibb.co/4tNHSWz/1.png" alt="1" border="0">
 <br/>
+
 1. Installation:
 Using npm:
 ```
 npm install
 ```
-
 2. To run:
 ```
 npm start
